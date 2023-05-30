@@ -1,0 +1,37 @@
+May 26 00:42:18.976 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+May 26 00:42:18.976 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 43837.
+May 26 00:42:18.984 HYPERVISOR: exec_cmd: hypervisor version 
+May 26 00:42:18.984 HYPERVISOR: exec_cmd: hypervisor working_dir /home/daniel/Downloads/Projeto Final/project-files/dynamips 
+May 26 00:42:18.984 GENERAL: working_dir=/home/daniel/Downloads/Projeto Final/project-files/dynamips
+May 26 00:42:18.984 HYPERVISOR: exec_cmd: hypervisor working_dir /home/daniel/Downloads/Projeto Final/project-files/dynamips/f0654324-445a-48a3-abac-74a5e75b26b9 
+May 26 00:42:18.984 GENERAL: working_dir=/home/daniel/Downloads/Projeto Final/project-files/dynamips/f0654324-445a-48a3-abac-74a5e75b26b9
+May 26 00:42:18.984 HYPERVISOR: exec_cmd: vm create BO 4 c3600 
+May 26 00:42:18.985 VM: VM BO created.
+May 26 00:42:18.985 HYPERVISOR: exec_cmd: vm set_con_tcp_port BO 5005 
+May 26 00:42:18.985 HYPERVISOR: exec_cmd: c3600 get_mac_addr BO 
+May 26 00:42:18.985 HYPERVISOR: exec_cmd: vm get_status BO 
+May 26 00:42:18.985 HYPERVISOR: exec_cmd: vm set_idle_pc BO 0x605d3700 
+May 26 00:42:18.986 HYPERVISOR: exec_cmd: vm set_ios BO /home/daniel/GNS3/images/IOS/c3640-ik9o3s-mz124-13.image 
+May 26 00:42:18.986 HYPERVISOR: exec_cmd: c3600 set_mac_addr BO cc04.209e.0000 
+May 26 00:42:18.987 HYPERVISOR: exec_cmd: vm set_nvram BO 256 
+May 26 00:42:18.987 HYPERVISOR: exec_cmd: vm set_ram BO 192 
+May 26 00:42:18.987 HYPERVISOR: exec_cmd: vm get_status BO 
+May 26 00:42:18.987 HYPERVISOR: exec_cmd: vm slot_add_binding BO 0 0 NM-4E 
+May 26 00:42:18.988 HYPERVISOR: exec_cmd: vm get_status BO 
+May 26 00:42:18.988 HYPERVISOR: exec_cmd: vm slot_add_binding BO 1 0 NM-1FE-TX 
+May 26 00:42:18.988 HYPERVISOR: exec_cmd: vm set_con_tcp_port BO 5005 
+May 26 00:42:20.338 HYPERVISOR: exec_cmd: nio create_udp udp-0dc20e4d-820c-4ac9-b94a-29bcc689e4a0 10016 127.0.0.1 10017 
+May 26 00:42:20.550 HYPERVISOR: exec_cmd: vm slot_add_nio_binding BO 0 0 udp-0dc20e4d-820c-4ac9-b94a-29bcc689e4a0 
+May 26 00:42:20.551 HYPERVISOR: exec_cmd: vm get_status BO 
+May 26 00:42:21.088 HYPERVISOR: exec_cmd: nio create_udp udp-6614c5d7-007d-4e86-8e9f-0a052a50a525 10026 127.0.0.1 10027 
+May 26 00:42:21.090 HYPERVISOR: exec_cmd: vm slot_add_nio_binding BO 0 1 udp-6614c5d7-007d-4e86-8e9f-0a052a50a525 
+May 26 00:42:21.090 HYPERVISOR: exec_cmd: vm get_status BO 
+May 26 00:52:16.483 HYPERVISOR: exec_cmd: vm get_status BO 
+May 26 00:52:16.484 HYPERVISOR: exec_cmd: vm extract_config BO 
+May 26 00:52:16.997 HYPERVISOR: exec_cmd: vm get_status BO 
+May 26 00:52:16.997 HYPERVISOR: exec_cmd: vm extract_config BO 
+May 26 00:52:16.998 HYPERVISOR: exec_cmd: vm delete BO 
+May 26 00:52:16.998 VM: VM BO destroyed.
+May 26 00:52:16.999 HYPERVISOR: exec_cmd: hypervisor stop 
+May 26 00:52:17.056 HYPERVISOR: Stopped.
+May 26 00:52:17.056 GENERAL: reset done.

@@ -1,0 +1,38 @@
+May 28 18:55:59.578 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+May 28 18:55:59.578 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 34419.
+May 28 18:55:59.585 HYPERVISOR: exec_cmd: hypervisor version 
+May 28 18:55:59.585 HYPERVISOR: exec_cmd: hypervisor working_dir /home/daniel/Downloads/Projeto Final/project-files/dynamips 
+May 28 18:55:59.585 GENERAL: working_dir=/home/daniel/Downloads/Projeto Final/project-files/dynamips
+May 28 18:55:59.586 HYPERVISOR: exec_cmd: hypervisor working_dir /home/daniel/Downloads/Projeto Final/project-files/dynamips/a95429c1-a67d-4e46-9f2e-48cc93e942be 
+May 28 18:55:59.586 GENERAL: working_dir=/home/daniel/Downloads/Projeto Final/project-files/dynamips/a95429c1-a67d-4e46-9f2e-48cc93e942be
+May 28 18:55:59.586 HYPERVISOR: exec_cmd: vm create AM 1 c3600 
+May 28 18:55:59.586 VM: VM AM created.
+May 28 18:55:59.586 HYPERVISOR: exec_cmd: vm set_con_tcp_port AM 5002 
+May 28 18:55:59.586 HYPERVISOR: exec_cmd: c3600 get_mac_addr AM 
+May 28 18:55:59.587 HYPERVISOR: exec_cmd: vm get_status AM 
+May 28 18:55:59.587 HYPERVISOR: exec_cmd: vm set_idle_pc AM 0x605d3700 
+May 28 18:55:59.588 HYPERVISOR: exec_cmd: vm set_ios AM /home/daniel/GNS3/images/IOS/c3640-ik9o3s-mz124-13.image 
+May 28 18:55:59.588 HYPERVISOR: exec_cmd: c3600 set_mac_addr AM cc01.203e.0000 
+May 28 18:55:59.588 HYPERVISOR: exec_cmd: vm set_nvram AM 256 
+May 28 18:55:59.588 HYPERVISOR: exec_cmd: vm set_ram AM 192 
+May 28 18:55:59.589 HYPERVISOR: exec_cmd: vm get_status AM 
+May 28 18:55:59.589 HYPERVISOR: exec_cmd: vm slot_add_binding AM 0 0 NM-4E 
+May 28 18:55:59.589 HYPERVISOR: exec_cmd: vm get_status AM 
+May 28 18:55:59.589 HYPERVISOR: exec_cmd: vm slot_add_binding AM 1 0 NM-1FE-TX 
+May 28 18:56:01.797 HYPERVISOR: exec_cmd: nio create_udp udp-c47dd520-7e4c-4e50-a644-ec605adb68a1 10022 127.0.0.1 10023 
+May 28 18:56:02.010 HYPERVISOR: exec_cmd: vm slot_add_nio_binding AM 0 0 udp-c47dd520-7e4c-4e50-a644-ec605adb68a1 
+May 28 18:56:02.011 HYPERVISOR: exec_cmd: vm get_status AM 
+May 28 18:56:02.153 HYPERVISOR: exec_cmd: nio create_udp udp-d205356b-a696-44ac-a33c-087245fb267e 10026 127.0.0.1 10027 
+May 28 18:56:02.154 HYPERVISOR: exec_cmd: vm slot_add_nio_binding AM 0 1 udp-d205356b-a696-44ac-a33c-087245fb267e 
+May 28 18:56:02.154 HYPERVISOR: exec_cmd: vm get_status AM 
+May 28 18:56:02.285 HYPERVISOR: exec_cmd: nio create_udp udp-9cee51b4-13ca-4ce2-bb55-f5abfcd73c2c 10032 127.0.0.1 10033 
+May 28 18:56:02.286 HYPERVISOR: exec_cmd: vm slot_add_nio_binding AM 0 2 udp-9cee51b4-13ca-4ce2-bb55-f5abfcd73c2c 
+May 28 18:56:02.287 HYPERVISOR: exec_cmd: vm get_status AM 
+May 28 19:21:08.418 HYPERVISOR: exec_cmd: vm set_ios AM /home/daniel/GNS3/images/IOS/c3640-ik9o3s-mz124-13.image 
+May 28 19:21:12.907 HYPERVISOR: exec_cmd: vm set_ios AM /home/daniel/GNS3/images/IOS/c3640-ik9o3s-mz124-13.image 
+May 28 19:21:21.534 HYPERVISOR: exec_cmd: vm set_ios AM /home/daniel/GNS3/images/IOS/c3640-ik9o3s-mz124-13.image 
+May 28 19:21:23.394 HYPERVISOR: exec_cmd: vm set_ios AM /home/daniel/GNS3/images/IOS/c3640-ik9o3s-mz124-13.image 
+May 28 19:21:25.206 HYPERVISOR: exec_cmd: vm set_ios AM /home/daniel/GNS3/images/IOS/c3640-ik9o3s-mz124-13.image 
+May 28 19:21:51.583 HYPERVISOR: exec_cmd: vm set_ios AM /home/daniel/GNS3/images/IOS/c3640-ik9o3s-mz124-13.image 
+May 28 19:21:53.422 HYPERVISOR: exec_cmd: vm set_ios AM /home/daniel/GNS3/images/IOS/c3640-ik9o3s-mz124-13.image 
+May 28 19:21:55.076 HYPERVISOR: exec_cmd: vm set_ios AM /home/daniel/GNS3/images/IOS/c3640-ik9o3s-mz124-13.image 

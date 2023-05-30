@@ -1,0 +1,40 @@
+May 26 00:42:18.937 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+May 26 00:42:18.937 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 42265.
+May 26 00:42:18.946 HYPERVISOR: exec_cmd: hypervisor version 
+May 26 00:42:18.946 HYPERVISOR: exec_cmd: hypervisor working_dir /home/daniel/Downloads/Projeto Final/project-files/dynamips 
+May 26 00:42:18.946 GENERAL: working_dir=/home/daniel/Downloads/Projeto Final/project-files/dynamips
+May 26 00:42:18.947 HYPERVISOR: exec_cmd: hypervisor working_dir /home/daniel/Downloads/Projeto Final/project-files/dynamips/4893db53-7480-4e2b-a609-7cbb56260b76 
+May 26 00:42:18.947 GENERAL: working_dir=/home/daniel/Downloads/Projeto Final/project-files/dynamips/4893db53-7480-4e2b-a609-7cbb56260b76
+May 26 00:42:18.947 HYPERVISOR: exec_cmd: vm create SP 3 c3600 
+May 26 00:42:18.947 VM: VM SP created.
+May 26 00:42:18.947 HYPERVISOR: exec_cmd: vm set_con_tcp_port SP 5004 
+May 26 00:42:18.948 HYPERVISOR: exec_cmd: c3600 get_mac_addr SP 
+May 26 00:42:18.948 HYPERVISOR: exec_cmd: vm get_status SP 
+May 26 00:42:18.949 HYPERVISOR: exec_cmd: vm set_idle_pc SP 0x605d3700 
+May 26 00:42:18.949 HYPERVISOR: exec_cmd: vm set_ios SP /home/daniel/GNS3/images/IOS/c3640-ik9o3s-mz124-13.image 
+May 26 00:42:18.950 HYPERVISOR: exec_cmd: c3600 set_mac_addr SP cc03.2080.0000 
+May 26 00:42:18.951 HYPERVISOR: exec_cmd: vm set_nvram SP 256 
+May 26 00:42:18.951 HYPERVISOR: exec_cmd: vm set_ram SP 192 
+May 26 00:42:18.951 HYPERVISOR: exec_cmd: vm get_status SP 
+May 26 00:42:18.951 HYPERVISOR: exec_cmd: vm slot_add_binding SP 0 0 NM-4E 
+May 26 00:42:18.952 HYPERVISOR: exec_cmd: vm get_status SP 
+May 26 00:42:18.952 HYPERVISOR: exec_cmd: vm slot_add_binding SP 1 0 NM-1FE-TX 
+May 26 00:42:18.952 HYPERVISOR: exec_cmd: vm set_con_tcp_port SP 5004 
+May 26 00:42:19.932 HYPERVISOR: exec_cmd: nio create_udp udp-2106be05-542f-4eb6-b516-d37f8937b53a 10010 127.0.0.1 10011 
+May 26 00:42:20.154 HYPERVISOR: exec_cmd: vm slot_add_nio_binding SP 0 0 udp-2106be05-542f-4eb6-b516-d37f8937b53a 
+May 26 00:42:20.158 HYPERVISOR: exec_cmd: vm get_status SP 
+May 26 00:42:20.722 HYPERVISOR: exec_cmd: nio create_udp udp-cf1762e4-b19c-4e3d-a746-09eb6ef3efc7 10020 127.0.0.1 10021 
+May 26 00:42:20.723 HYPERVISOR: exec_cmd: vm slot_add_nio_binding SP 0 1 udp-cf1762e4-b19c-4e3d-a746-09eb6ef3efc7 
+May 26 00:42:20.723 HYPERVISOR: exec_cmd: vm get_status SP 
+May 26 00:42:21.507 HYPERVISOR: exec_cmd: nio create_udp udp-e09497e8-8ec8-4975-adbe-f1835698bac1 10034 127.0.0.1 10035 
+May 26 00:42:21.508 HYPERVISOR: exec_cmd: vm slot_add_nio_binding SP 0 2 udp-e09497e8-8ec8-4975-adbe-f1835698bac1 
+May 26 00:42:21.508 HYPERVISOR: exec_cmd: vm get_status SP 
+May 26 00:52:16.475 HYPERVISOR: exec_cmd: vm get_status SP 
+May 26 00:52:16.475 HYPERVISOR: exec_cmd: vm extract_config SP 
+May 26 00:52:16.605 HYPERVISOR: exec_cmd: vm get_status SP 
+May 26 00:52:16.606 HYPERVISOR: exec_cmd: vm extract_config SP 
+May 26 00:52:16.606 HYPERVISOR: exec_cmd: vm delete SP 
+May 26 00:52:16.606 VM: VM SP destroyed.
+May 26 00:52:16.608 HYPERVISOR: exec_cmd: hypervisor stop 
+May 26 00:52:17.007 HYPERVISOR: Stopped.
+May 26 00:52:17.007 GENERAL: reset done.

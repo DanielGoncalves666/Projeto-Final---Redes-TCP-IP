@@ -1,0 +1,1 @@
+Formatting '/home/daniel/Downloads/Projeto Final/project-files/qemu/7a4a644c-d8a4-44cc-80da-b7d9eda3bafb/hda_disk.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=67108864 backing_file=/home/daniel/GNS3/images/QEMU/chr-6.49.7.img backing_fmt=raw lazy_refcounts=off refcount_bits=16
