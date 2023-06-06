@@ -60,7 +60,7 @@ AM - R1
 	
 		AM
 	config t
-	interface ethernet 0/2
+	interface ethernet 0/3
 	ip address 192.168.1.41 255.255.255.252
 	no shutdown
 	

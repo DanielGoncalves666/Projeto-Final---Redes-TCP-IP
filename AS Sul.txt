@@ -1,0 +1,119 @@
+
+R5 - R6
+	192.168.1.4 /30
+	
+		R6
+	configure t
+	interface e0/0
+	ip address 192.168.1.6 255.255.255.252
+	no shutdown
+	
+		R5
+	configure t
+	interface e0/1
+	ip address 192.168.1.5 255.255.255.252
+	no shutdown
+
+R5 - Mikrotik-2
+	192.168.1.8 /30
+	
+		R5
+	configure t
+	interface e0/0
+	ip address 192.168.1.9 255.255.255.252
+	no shutdown
+	
+		Mikrotik-2
+	ip address add address=192.168.1.10/30 interface=ether1
+	
+Mikrotik-2 - R6
+	192.168.1.12 /30
+
+		R6
+	configure t
+	interface e0/1
+	ip address 192.168.1.13 255.255.255.252
+	no shutdown
+	
+		Mikrotik-2
+	ip address add address=192.168.1.14/30 interface=ether3
+
+R6 - R4
+	192.168.1.16 /30
+	
+		R6
+	configure t
+	interface f1/0
+	ip address 192.168.1.18 255.255.255.252
+	no shutdown
+	
+		R4
+	configure t
+	interface f1/0
+	ip address 192.168.1.17 255.255.255.252
+	no shutdown
+
+R5 - CH
+	192.168.1.20 /30
+	2001:cafe:db4:: /64
+	
+	2001:cafe:db2:: /64
+	192.168.1.76 /30
+	
+		R5
+	config t
+	ipv6 unicast-routing
+	interface e0/3
+	ipv6 enable
+	ipv6 address 2001:cafe:db4::1/64
+	no shutdown
+	
+	config t
+	interface ethernet 0/3
+	ip address 192.168.1.21 255.255.255.252
+	no shutdown
+	
+		CH
+	config t
+	ipv6 unicast-routing
+	interface e0/0
+	ipv6 enable
+	ipv6 address 2001:cafe:db4::2/64
+	no shutdown
+	
+	config t
+	interface ethernet 0/0
+	ip address 192.168.1.22 255.255.255.252
+	no shutdown
+	
+R4 - AR
+	192.168.1.24 /30
+	
+		R4
+	configure t
+	interface e0/0
+	ip address 192.168.1.25 255.255.255.252
+	no shutdown
+	
+		AR
+	configure t
+	interface e2/0
+	ip address 192.168.1.26 255.255.255.252
+	no shutdown
+	
+R5 - PC3 - PC4
+	192.168.1.56 /29
+	
+		R5
+	config t
+	interface ethernet 0/2
+	ip address 192.168.1.57 255.255.255.248
+	no shutdown
+	
+		PC3
+	ip 192.168.1.58 255.255.255.248 192.168.1.57
+	save
+	
+		PC4
+	ip 192.168.1.59 255.255.255.248 192.168.1.57
+	save	

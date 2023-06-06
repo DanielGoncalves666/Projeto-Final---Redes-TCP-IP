@@ -28,25 +28,9 @@ SP - PE
 	ip address 192.168.1.54 255.255.255.252
 	no shutdown
 	
-R5 - PC3 - PC4
-	192.168.1.56 /29
-	
-		R5
-	config t
-	interface ethernet 0/2
-	ip address 192.168.1.57 255.255.255.248
-	no shutdown
-	
-		PC3
-	ip 192.168.1.58 255.255.255.248 192.168.1.57
-	save
-	
-		PC4
-	ip 192.168.1.59 255.255.255.248 192.168.1.57
-	save
-	
 AR - BO
 	2001:cafe:db1:: /64
+	192.168.1.72 /30
 	
 		AR
 	config t
@@ -56,6 +40,11 @@ AR - BO
 	ipv6 address 2001:cafe:db1::1/64
 	no shutdown
 	
+	config t
+	interface ethernet 0/1
+	ip address 192.168.1.73 255.255.255.252
+	no shutdown
+	
 		BO
 	config t
 	ipv6 unicast-routing
@@ -63,9 +52,15 @@ AR - BO
 	ipv6 enable
 	ipv6 address 2001:cafe:db1::2/64
 	no shutdown
+	
+	config t
+	interface ethernet 0/0
+	ip address 192.168.1.74 255.255.255.252
+	no shutdown
 		
 AR - SP
 	2001:cafe:db2:: /64
+	192.168.1.76 /30
 	
 		AR
 	config t
@@ -75,6 +70,11 @@ AR - SP
 	ipv6 address 2001:cafe:db2::1/64
 	no shutdown
 	
+	config t
+	interface ethernet 0/0
+	ip address 192.168.1.77 255.255.255.252
+	no shutdown
+	
 		SP
 	config t
 	ipv6 unicast-routing
@@ -82,9 +82,15 @@ AR - SP
 	ipv6 enable
 	ipv6 address 2001:cafe:db2::2/64
 	no shutdown
+	
+	config t
+	interface ethernet 0/0
+	ip address 192.168.1.78 255.255.255.252
+	no shutdown
 		
 SP - AM
 	2001:cafe:db3::	/64
+	192.168.1.80 /30
 	
 		SP
 	config t
@@ -94,12 +100,22 @@ SP - AM
 	ipv6 address 2001:cafe:db3::1/64
 	no shutdown
 	
+	config t
+	interface ethernet 0/2
+	ip address 192.168.1.81 255.255.255.252
+	no shutdown
+	
 		AM
 	config t
 	ipv6 unicast-routing
 	interface e0/1
 	ipv6 enable
 	ipv6 address 2001:cafe:db3::2/64
+	no shutdown
+	
+	config t
+	interface ethernet 0/1
+	ip address 192.168.1.82 255.255.255.252
 	no shutdown
 	
 	
