@@ -1,0 +1,51 @@
+RIPng
+
+Central
+	Configuração feita nas interfaces com rede IPv6.
+
+	BO
+		config t
+		interface e0/0
+		ipv6 rip REDES enable
+
+	AR
+		config t
+		interface e0/0
+		ipv6 rip REDES enable
+		
+		interface e0/1
+		ipv6 rip REDES enable
+
+	SP
+		config t
+		interface e0/0
+		ipv6 rip REDES enable
+		
+		interface e0/2
+		ipv6 rip REDES enable
+
+	AM
+		config t
+		interface e0/1
+		ipv6 rip REDES enable
+
+RIPv2
+	
+	BO, AR, SP, AM, PE
+		config t
+		router rip
+		version 2
+		
+		network 192.168.1.0
+		no auto-summary
+		
+	AR
+		passive-interface e0/2
+		
+	AM
+		passive-interface e0/2
+	
+	PE
+		passive-interface e0/1
+		
+		
