@@ -1,0 +1,18 @@
+PE
+	config t
+	router bgp 200
+	no bpg default ipv4-unicast
+	no bgp router-id 
+
+	neighbor 192.168.1.45 remote-as 100
+	address-family ipv4 unicast
+	neighbor 192.168.1.45 activate
+	network 192.168.1.44 255.255.255.252
+
+
+AM
+
+
+
+
+AR

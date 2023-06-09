@@ -1,0 +1,22 @@
+R1
+	config t
+	router ospf 1
+	network 192.168.1.28 0.0.0.3 area 0
+	
+	
+R2 
+	config t
+	router ospf 1
+	network 192.168.1.32 0.0.0.3 area 0
+	network 192.168.1.36 0.0.0.3 area 1
+	
+Mikrotik-1
+	routing ospf instance add name=REDES
+	routing ospf network add network=192.168.1.28/30 area=backbone
+	routing ospf network add network=192.168.1.32/30 area=backbone
+
+R3
+	config t
+	router ospf 1
+	network 192.168.1.36 0.0.0.3 area 1
+	network 192.168.1.64 0.0.0.7 area 1
