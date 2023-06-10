@@ -1,0 +1,22 @@
+SSH:
+
+R3(config)#ip domain-name projetoredes.com
+R3(config)#crypto key generate rsa
+R3(config)#ip ssh version 2
+R3(config)#ip ssh authentication-retries 2
+R3(config)#enable secret projetoredes123
+R3(config)#username projetoredes secret projetoredes123
+R3(config)#line vty 0 4
+R3(config-line)#login local
+R3(config-line)#transport input ssh
+R3(config-line)#exit
+R3(config)#exit
+R3#copy r s
+
+
+/como acessar pelo R2
+R2#ssh -l projetoredes 192.168.1.38
+ /coloca a senha projetoredes123
+R3>en
+R3#show ip int brief
+

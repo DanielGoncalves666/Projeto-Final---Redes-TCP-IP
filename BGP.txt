@@ -143,3 +143,50 @@ AR - R4
 		config t
 		router ospf 1
 		redistribute bgp 300 subnets
+		
+CH - R5
+	CH
+			#Configuração Básica
+		config t
+		router bgp 400
+		no bpg default ipv4-unicast
+		no bgp router-id 
+		
+		neighbor 192.168.1.21 remote-as 300
+		
+		address-family ipv4 unicast
+		neighbor 192.168.1.21 activate
+		network 192.168.1.20 mask 255.255.255.252
+		
+			# Redistribui o OSPF no BGP
+		config t
+		router bgp 400
+		redistribute ospf 1
+			
+			# Redistribui BGP no OSPF
+		config t
+		router ospf 1
+		redistribute bgp 400 subnets
+		
+	R5
+			#Configuração Básica
+		config t
+		router bgp 300
+		no bpg default ipv4-unicast
+		no bgp router-id 
+		
+		neighbor 192.168.1.22 remote-as 400
+		
+		address-family ipv4 unicast
+		neighbor 192.168.1.22 activate
+		network 192.168.1.20 mask 255.255.255.252
+		
+			# Redistribui o OSPF no BGP
+		config t
+		router bgp 300
+		redistribute ospf 1 match external 1 external 2
+			
+			# Redistribui BGP no OSPF
+		config t
+		router ospf 1
+		redistribute bgp 300 subnets
