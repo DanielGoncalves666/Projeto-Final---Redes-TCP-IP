@@ -138,6 +138,7 @@ AR - R4
 		config t
 		router bgp 300
 		redistribute ospf 1
+		redistribute ospf 1 match external 1 external 2
 			
 			# Redistribui BGP no OSPF
 		config t
@@ -162,6 +163,7 @@ CH - R5
 		config t
 		router bgp 400
 		redistribute ospf 1
+		redistribute ospf 1 match external 1 external 2
 			
 			# Redistribui BGP no OSPF
 		config t
