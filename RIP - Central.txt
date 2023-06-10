@@ -10,17 +10,11 @@ Central
 
 	AR
 		config t
-		interface e0/0
-		ipv6 rip REDES enable
-		
 		interface e0/1
 		ipv6 rip REDES enable
 
 	SP
-		config t
-		interface e0/0
-		ipv6 rip REDES enable
-		
+		config t	
 		interface e0/2
 		ipv6 rip REDES enable
 

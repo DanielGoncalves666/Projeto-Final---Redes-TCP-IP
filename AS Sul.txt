@@ -55,32 +55,14 @@ R6 - R4
 
 R5 - CH
 	192.168.1.20 /30
-	2001:cafe:db4:: /64
-	
-	2001:cafe:db2:: /64
-	192.168.1.76 /30
 	
 		R5
-	config t
-	ipv6 unicast-routing
-	interface e0/3
-	ipv6 enable
-	ipv6 address 2001:cafe:db4::1/64
-	no shutdown
-	
 	config t
 	interface ethernet 0/3
 	ip address 192.168.1.21 255.255.255.252
 	no shutdown
 	
 		CH
-	config t
-	ipv6 unicast-routing
-	interface e0/0
-	ipv6 enable
-	ipv6 address 2001:cafe:db4::2/64
-	no shutdown
-	
 	config t
 	interface ethernet 0/0
 	ip address 192.168.1.22 255.255.255.252

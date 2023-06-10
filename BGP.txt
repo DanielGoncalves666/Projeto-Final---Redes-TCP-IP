@@ -1,38 +1,145 @@
 PE - R2
 	PE
+			# Configuração básica
 		config t
 		router bgp 200
-		redistribute rip --> redistribui o rip no bgp
-		bgp redistribute-internal
 		no bpg default ipv4-unicast
 		no bgp router-id 
+		
 		neighbor 192.168.1.45 remote-as 100
-
+		
 		address-family ipv4 unicast
 		neighbor 192.168.1.45 activate
 		network 192.168.1.44 mask 255.255.255.252
-
+		
+			# Redistribuir o RIP no BGP
+		config t
+		router bgp 200
+		redistribute rip --> redistribui o rip no bgp
+		
+			# Redistribuir o BGP no RIP
 		config t
 		router rip
 		address-family ipv4 unicast
-		redistribute bgp 200
+		redistribute bgp 200 metric 10 --> redistribui o bgp no rip
 
 	R2
+			#Configuração Básica
+		config t
+		router bgp 100
+		no bpg default ipv4-unicast
+		no bgp router-id 
+		
+		neighbor 192.168.1.46 remote-as 200
+		
+		address-family ipv4 unicast
+		neighbor 192.168.1.46 activate
+		network 192.168.1.44 mask 255.255.255.252
+		
+			# Redistribui o OSPF no BGP
 		config t
 		router bgp 100
 		redistribute ospf 1
-		bgp redistribute-internal
+			
+			# Redistribui BGP no OSPF
+		config t
+		router ospf 1
+		redistribute bgp 100 subnets
+
+AM - R1
+	AM
+			# Configuração básica
+		config t
+		router bgp 200
 		no bpg default ipv4-unicast
 		no bgp router-id 
-		neighbor 192.168.1.46 remote-as 200
-
+		
+		neighbor 192.168.1.42 remote-as 100
+		
 		address-family ipv4 unicast
-		neighbor 192.168.1.46 activate
-		network 192.168.1.44  mask 255.255.255.252
+		neighbor 192.168.1.42 activate
+		network 192.168.1.40 mask 255.255.255.252
+		
+			# Redistribuir o RIP no BGP
+		config t
+		router bgp 200
+		redistribute rip --> redistribui o rip no bgp
+		
+			# Redistribuir o BGP no RIP
+		config t
+		router rip
+		address-family ipv4 unicast
+		redistribute bgp 200 metric 15 --> redistribui o bgp no rip
 
-AM
+	R1
+			#Configuração Básica
+		config t
+		router bgp 100
+		no bpg default ipv4-unicast
+		no bgp router-id 
+		
+		neighbor 192.168.1.41 remote-as 200
+		
+		address-family ipv4 unicast
+		neighbor 192.168.1.41 activate
+		network 192.168.1.40 mask 255.255.255.252
+		
+			# Redistribui o OSPF no BGP
+		config t
+		router bgp 100
+		redistribute ospf 1
+			
+			# Redistribui BGP no OSPF
+		config t
+		router ospf 1
+		redistribute bgp 100 subnets	
 
 
 
+AR - R4
+	AR
+			# Configuração básica
+		config t
+		router bgp 200
+		no bpg default ipv4-unicast
+		no bgp router-id 
+		
+		neighbor 192.168.1.25 remote-as 300
+		
+		address-family ipv4 unicast
+		neighbor 192.168.1.25 activate
+		network 192.168.1.24 mask 255.255.255.252
+		
+			# Redistribuir o RIP no BGP
+		config t
+		router bgp 200
+		redistribute rip --> redistribui o rip no bgp
+		
+			# Redistribuir o BGP no RIP
+		config t
+		router rip
+		address-family ipv4 unicast
+		redistribute bgp 200 metric 10 --> redistribui o bgp no rip
 
-AR
+	R4
+			#Configuração Básica
+		config t
+		router bgp 300
+		no bpg default ipv4-unicast
+		no bgp router-id 
+		
+		neighbor 192.168.1.26 remote-as 200
+		
+		address-family ipv4 unicast
+		neighbor 192.168.1.26 activate
+		network 192.168.1.24 mask 255.255.255.252
+		
+			# Redistribui o OSPF no BGP
+		config t
+		router bgp 300
+		redistribute ospf 1
+			
+			# Redistribui BGP no OSPF
+		config t
+		router ospf 1
+		redistribute bgp 300 subnets

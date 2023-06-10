@@ -59,16 +59,9 @@ AR - BO
 	no shutdown
 		
 AR - SP
-	2001:cafe:db2:: /64
 	192.168.1.76 /30
 	
 		AR
-	config t
-	ipv6 unicast-routing
-	interface e0/0
-	ipv6 enable
-	ipv6 address 2001:cafe:db2::1/64
-	no shutdown
 	
 	config t
 	interface ethernet 0/0
@@ -76,13 +69,6 @@ AR - SP
 	no shutdown
 	
 		SP
-	config t
-	ipv6 unicast-routing
-	interface e0/0
-	ipv6 enable
-	ipv6 address 2001:cafe:db2::2/64
-	no shutdown
-	
 	config t
 	interface ethernet 0/0
 	ip address 192.168.1.78 255.255.255.252
