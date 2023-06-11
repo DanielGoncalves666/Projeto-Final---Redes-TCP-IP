@@ -31,7 +31,7 @@
                 "locked": false,
                 "rotation": 0,
                 "svg": "<svg width=\"477.4004220292435\" height=\"494.1444914563969\"><ellipse cx=\"238\" rx=\"239\" cy=\"247\" ry=\"248\" fill=\"#ffffff\" fill-opacity=\"1.0\" stroke-width=\"2\" stroke=\"#000000\" /></svg>",
-                "x": -796,
+                "x": -795,
                 "y": -118,
                 "z": 0
             }
@@ -852,7 +852,7 @@
                 "template_id": "028dec4c-b57c-4d4f-8819-3b4ffb901975",
                 "width": 66,
                 "x": 344,
-                "y": 11,
+                "y": 9,
                 "z": 1
             },
             {
@@ -1132,7 +1132,7 @@
                 "template_id": "028dec4c-b57c-4d4f-8819-3b4ffb901975",
                 "width": 66,
                 "x": 231,
-                "y": -258,
+                "y": -259,
                 "z": 1
             },
             {
@@ -1303,7 +1303,7 @@
                     "options": "",
                     "platform": "x86_64",
                     "process_priority": "normal",
-                    "qemu_path": "/usr/bin/qemu-system-x86_64",
+                    "qemu_path": "/bin/qemu-system-x86_64",
                     "ram": 256,
                     "replicate_network_connection_state": true,
                     "tpm": false,
@@ -1372,7 +1372,7 @@
                     "options": "",
                     "platform": "x86_64",
                     "process_priority": "normal",
-                    "qemu_path": "/usr/bin/qemu-system-x86_64",
+                    "qemu_path": "/bin/qemu-system-x86_64",
                     "ram": 256,
                     "replicate_network_connection_state": true,
                     "tpm": false,
@@ -1768,7 +1768,7 @@
                 "template_id": "1966b864-93e7-32d5-965f-001384eec461",
                 "width": 72,
                 "x": -725,
-                "y": 24,
+                "y": 25,
                 "z": 1
             },
             {
@@ -1834,5 +1834,5 @@
     "type": "topology",
     "variables": null,
     "version": "2.2.38",
-    "zoom": 67
+    "zoom": 56
 }

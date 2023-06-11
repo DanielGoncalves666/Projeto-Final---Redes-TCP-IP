@@ -1,0 +1,383 @@
+I-BGP
+
+
+##### CENTRAL #####
+SP
+	config t
+	router bgp 200
+	no bgp default ipv4-unicast
+	no bgp router-id
+	
+	neighbor 192.168.1.77 remote-as 200
+	neighbor 192.168.1.54 remote-as 200
+	neighbor 192.168.1.82 remote-as 200
+	
+	address-family ipv4 unicast
+	neighbor 192.168.1.77 activate
+	neighbor 192.168.1.54 activate
+	neighbor 192.168.1.82 activate
+	network 192.168.1.76 mask 255.255.255.252
+	network 192.168.1.52 mask 255.255.255.252
+	network 192.168.1.80 mask 255.255.255.252	
+	
+PE
+	config t
+	router bgp 200
+	no bgp default ipv4-unicast
+	no bgp router-id
+	
+	neighbor 192.168.1.53 remote-as 200
+	
+	address-family ipv4 unicast
+	neighbor 192.168.1.53 activate
+	network 192.168.1.52 mask 255.255.255.252	
+
+AM
+	config t
+	router bgp 200
+	no bgp default ipv4-unicast
+	no bgp router-id
+	
+	neighbor 192.168.1.49 remote-as 200
+	neighbor 192.168.1.81 remote-as 200
+	
+	address-family ipv4 unicast
+	neighbor 192.168.1.49 activate
+	neighbor 192.168.1.81 activate
+	network 192.168.1.48 mask 255.255.255.252	
+	network 192.168.1.80 mask 255.255.255.252
+	
+BO
+	config t
+	router bgp 200
+	no bgp default ipv4-unicast
+	no bgp router-id
+	
+	neighbor 192.168.1.73 remote-as 200
+	neighbor 192.168.1.50 remote-as 200
+	
+	address-family ipv4 unicast
+	neighbor 192.168.1.73 activate
+	neighbor 192.168.1.50 activate
+	network 192.168.1.72 mask 255.255.255.252	
+	network 192.168.1.48 mask 255.255.255.252
+
+AR	
+	config t
+	router bgp 200
+	no bgp default ipv4-unicast
+	no bgp router-id
+	
+	neighbor 192.168.1.78 remote-as 200
+	neighbor 192.168.1.74 remote-as 200
+	
+	address-family ipv4 unicast
+	neighbor 192.168.1.78 activate
+	neighbor 192.168.1.74 activate
+	network 192.168.1.76 mask 255.255.255.252	
+	network 192.168.1.72 mask 255.255.255.252
+
+##### Norte ##### 
+R1
+	config t
+	router bgp 100
+	no bgp default ipv4-unicast
+	no bgp router-id
+	
+	neighbor 192.168.1.30 remote-as 100
+	
+	address-family ipv4 unicast
+	neighbor 192.168.1.30 activate	
+	network 192.168.1.28 mask 255.255.255.252
+
+R2
+	config t
+	router bgp 100
+	no bgp default ipv4-unicast
+	no bgp router-id
+	
+	neighbor 192.168.1.34 remote-as 100
+	neighbor 192.168.1.38 remote-as 100
+		
+	address-family ipv4 unicast
+	neighbor 192.168.1.34 activate	
+	neighbor 192.168.1.38 activate	
+	network 192.168.1.32 mask 255.255.255.252
+	network 192.168.1.36 mask 255.255.255.252
+	
+R3
+	config t
+	router bgp 100
+	no bgp default ipv4-unicast
+	no bgp router-id
+	
+	neighbor 192.168.1.37 remote-as 100
+	
+	address-family ipv4 unicast
+	neighbor 192.168.1.37 activate	
+	network 192.168.1.36 mask 255.255.255.252
+	network 192.168.1.64 mask 255.255.255.248
+
+Mikrotik-1
+	routing bgp instance set default as=100
+	routing bgp peer add name=peer1 remote-address=192.168.1.29 remote-as=100
+	routing bgp peer add name=peer2 remote-address=192.168.1.33 remote-as=100	
+	routing bgp network add network=192.168.1.28/30
+	routing bgp network add network=192.168.1.32/30
+
+
+##### Sul #####
+R4
+	config t
+	router bgp 300
+	no bgp default ipv4-unicast
+	no bgp router-id
+	
+	neighbor 192.168.1.18 remote-as 300
+	
+	address-family ipv4 unicast
+	neighbor 192.168.1.18 activate	
+	network 192.168.1.16 mask 255.255.255.252
+
+
+R5
+	config t
+	router bgp 300
+	no bgp default ipv4-unicast
+	no bgp router-id
+	
+	neighbor 192.168.1.10 remote-as 300
+	neighbor 192.168.1.6 remote-as 300
+		
+	address-family ipv4 unicast
+	neighbor 192.168.1.10 activate	
+	neighbor 192.168.1.6 activate	
+	network 192.168.1.8 mask 255.255.255.252
+	network 192.168.1.4 mask 255.255.255.252
+	network 192.168.1.56 mask 255.255.255.248
+
+R6
+	config t
+	router bgp 300
+	no bgp default ipv4-unicast
+	no bgp router-id
+	
+	neighbor 192.168.1.5 remote-as 300
+	neighbor 192.168.1.14 remote-as 300
+	neighbor 192.168.1.17 remote-as 300
+	
+	address-family ipv4 unicast
+	neighbor 192.168.1.5 activate
+	neighbor 192.168.1.14 activate
+	neighbor 192.168.1.17 activate
+	network 192.168.1.4 mask 255.255.255.252
+	network 192.168.1.12 mask 255.255.255.252
+	network 192.168.1.16 mask 255.255.255.252	
+
+Mikrotik-2
+	routing bgp instance set default as=300
+	routing bgp peer add name=peer1 remote-address=192.168.1.9 remote-as=300
+	routing bgp peer add name=peer2 remote-address=192.168.1.13 remote-as=300	
+	routing bgp network add network=192.168.1.8/30
+	routing bgp network add network=192.168.1.12/30
+
+
+
+###########################################################################
+E-BGP
+
+
+PE - R2
+	PE
+			# Configuração básica
+		config t
+		router bgp 200
+		no bgp default ipv4-unicast
+		no bgp router-id 
+		
+		neighbor 192.168.1.45 remote-as 100
+		
+		address-family ipv4 unicast
+		neighbor 192.168.1.45 activate
+		network 192.168.1.44 mask 255.255.255.252
+		
+			# Redistribuir o RIP no BGP
+		config t
+		router bgp 200
+		redistribute rip --> redistribui o rip no bgp
+		
+			# Redistribuir o BGP no RIP 
+		config t
+		router rip
+		address-family ipv4 unicast
+		redistribute bgp 200 metric 10 --> redistribui o bgp no rip
+
+	R2
+			#Configuração Básica
+		config t
+		router bgp 100
+		no bgp default ipv4-unicast
+		no bgp router-id 
+		
+		neighbor 192.168.1.46 remote-as 200
+		
+		address-family ipv4 unicast
+		neighbor 192.168.1.46 activate
+		network 192.168.1.44 mask 255.255.255.252
+		
+			# Redistribui o OSPF no BGP
+		config t
+		router bgp 100
+		redistribute ospf 1
+			
+			# Redistribui BGP no OSPF 
+		config t
+		router ospf 1
+		redistribute bgp 100 subnets
+
+AM - R1
+	AM
+			# Configuração básica
+		config t
+		router bgp 200
+		no bgp default ipv4-unicast
+		no bgp router-id 
+		
+		neighbor 192.168.1.42 remote-as 100
+		
+		address-family ipv4 unicast
+		neighbor 192.168.1.42 activate
+		network 192.168.1.40 mask 255.255.255.252
+		
+			# Redistribuir o RIP no BGP
+		config t
+		router bgp 200
+		redistribute rip --> redistribui o rip no bgp
+		
+			# Redistribuir o BGP no RIP (removido)
+		config t
+		router rip
+		address-family ipv4 unicast
+		redistribute bgp 200 metric 15 --> redistribui o bgp no rip
+
+	R1
+			#Configuração Básica
+		config t
+		router bgp 100
+		no bgp default ipv4-unicast
+		no bgp router-id 
+		
+		neighbor 192.168.1.41 remote-as 200
+		
+		address-family ipv4 unicast
+		neighbor 192.168.1.41 activate
+		network 192.168.1.40 mask 255.255.255.252
+		
+			# Redistribui o OSPF no BGP
+		config t
+		router bgp 100
+		redistribute ospf 1
+			
+			# Redistribui BGP no OSPF (removidO)
+		config t
+		router ospf 1
+		redistribute bgp 100 subnets	
+
+
+
+AR - R4
+	AR
+			# Configuração básica
+		config t
+		router bgp 200
+		no bgp default ipv4-unicast
+		no bgp router-id 
+		
+		neighbor 192.168.1.25 remote-as 300
+		
+		address-family ipv4 unicast
+		neighbor 192.168.1.25 activate
+		network 192.168.1.24 mask 255.255.255.252
+		
+			# Redistribuir o RIP no BGP
+		config t
+		router bgp 200
+		redistribute rip --> redistribui o rip no bgp
+		
+			# Redistribuir o BGP no RIP (removido)
+		config t
+		router rip
+		address-family ipv4 unicast
+		redistribute bgp 200 metric 10 --> redistribui o bgp no rip
+
+	R4
+			#Configuração Básica
+		config t
+		router bgp 300
+		no bgp default ipv4-unicast
+		no bgp router-id 
+		
+		neighbor 192.168.1.26 remote-as 200
+		
+		address-family ipv4 unicast
+		neighbor 192.168.1.26 activate
+		network 192.168.1.24 mask 255.255.255.252
+		
+			# Redistribui o OSPF no BGP
+		config t
+		router bgp 300
+		redistribute ospf 1
+		redistribute ospf 1 match external 1 external 2
+			
+			# Redistribui BGP no OSPF (removido)
+		config t
+		router ospf 1
+		redistribute bgp 300 subnets
+		
+CH - R5
+	CH
+			#Configuração Básica
+		config t
+		router bgp 400
+		no bgp default ipv4-unicast
+		no bgp router-id 
+		
+		neighbor 192.168.1.21 remote-as 300
+		
+		address-family ipv4 unicast
+		neighbor 192.168.1.21 activate
+		network 192.168.1.20 mask 255.255.255.252
+		
+			# Redistribui o OSPF no BGP
+		config t
+		router bgp 400
+		redistribute ospf 1
+		redistribute ospf 1 match external 1 external 2
+			
+			# Redistribui BGP no OSPF
+		config t
+		router ospf 1
+		redistribute bgp 400 subnets
+		
+	R5
+			#Configuração Básica
+		config t
+		router bgp 300
+		no bgp default ipv4-unicast
+		no bgp router-id 
+		
+		neighbor 192.168.1.22 remote-as 400
+		
+		address-family ipv4 unicast
+		neighbor 192.168.1.22 activate
+		network 192.168.1.20 mask 255.255.255.252
+		
+			# Redistribui o OSPF no BGP
+		config t
+		router bgp 300
+		redistribute ospf 1 match external 1 external 2
+			
+			# Redistribui BGP no OSPF 
+		config t
+		router ospf 1
+		redistribute bgp 300 subnets
